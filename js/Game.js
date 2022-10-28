@@ -160,7 +160,10 @@ class Game {
           camera.position.y = cars[index - 1].position.y;
         }
       }
-
+      if(this.playerMoving){
+        player.positionY += 10;
+        player.update();
+      }
       // handling keyboard events
       this.handlePlayerControls();
 
@@ -262,6 +265,7 @@ class Game {
       player.positionY += 10;
       player.update();
     }
+    
 
     if (keyIsDown(LEFT_ARROW) && player.positionX > width / 3 - 50) {
       player.positionX -= 5;
